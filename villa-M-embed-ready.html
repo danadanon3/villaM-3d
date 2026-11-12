@@ -16,20 +16,21 @@
     opacity:0; transition:opacity .9s ease;   /* плавное появление после загрузки */
   }
   #villa-hero.is-ready{ opacity:1; }
+  #villa-hero{ top:8%; }   /* модель чуть ниже */
   /* Если HTML-слой лежит НАД кнопками, этот пункт тоже отдаёт клики вниз */
   .t396__elem:has(#villa-hero), .tn-atom:has(#villa-hero){ pointer-events:none !important; }
 </style>
 
 <model-viewer
   id="villa-hero"
-  src="https://cdn.jsdelivr.net/gh/danadanon3/villaM-3d@main/villa-M.glb"
+  src="https://cdn.jsdelivr.net/gh/danadanon3/villaM-3d@main/villa-M-opt.glb"
   alt="Villa — Domaine d'Eole"
 
   auto-rotate
   auto-rotate-delay="0"
   rotation-per-second="12deg"
 
-  camera-orbit="35deg 42deg 100%"
+  camera-orbit="35deg 42deg 80%"
   field-of-view="30deg"
   interaction-prompt="none"
   disable-zoom disable-pan disable-tap
@@ -40,6 +41,7 @@
   shadow-softness="1"
 
   loading="eager"
+  poster=""
   reveal="auto">
 </model-viewer>
 
@@ -75,7 +77,7 @@
 
   /* на телефоне отдаляем камеру, чтобы вытянутая вилла не обрезалась по краям */
   if (window.matchMedia('(max-width: 640px)').matches) {
-    mv.setAttribute('camera-orbit', '35deg 46deg 125%');
+    mv.setAttribute('camera-orbit', '35deg 46deg 100%');
   }
 })();
 </script>
